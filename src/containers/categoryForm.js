@@ -1,24 +1,27 @@
 import React, {Component} from 'react'
 
-class categoryForm extends Component {
+class CategoryForm extends Component {
     
     state = {
-        catgory: {
+        category: {
             name: ""
-        }
+        },
         loading: false
     }
 
 
     handleOnChange = event => {
-        this.setState({
-            name: event.target.value
+        this.setState({...this.state,
+            category: {
+                ...this.state.category,
+                name: event.target.value
+            }
         })
     }
 
     handleOnSubmit = event => {
         event.preventDefault();
-        const category = {...this.state.catgory}
+        const category = {...this.state.category}
         console.log(category)
     }
 
@@ -26,11 +29,13 @@ class categoryForm extends Component {
         return(
             <div>
                 <form onSubmit={this.handleOnSubmit}>
+                    <label>Category Name: </label>
                     <input 
-                        type="text" name="name" 
+                        type="text" 
                         onChange={this.handleOnChange} 
-                        value={this.state.catgory.name} 
+                        value={this.state.category.name} 
                     />
+                    <br/><br/>
                     <button type="submit">Add Category</button>
                 </form>
             </div>
@@ -38,4 +43,4 @@ class categoryForm extends Component {
     }
 }
 
-export default categoryForm
+export default CategoryForm

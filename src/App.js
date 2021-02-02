@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import {connect} from 'react-redux'
 import {getCategories} from './actions/categories'
+import CategoryForm from './containers/CategoryForm'
 
 class App extends Component {
 
@@ -14,6 +15,7 @@ class App extends Component {
         <h1>Nonprofit Organizations</h1>
         <hr/>
         <h2>Categories: -select box here-</h2>
+        <CategoryForm/>
         <h3>{nonprofitCards}</h3>
       </div>
     )
