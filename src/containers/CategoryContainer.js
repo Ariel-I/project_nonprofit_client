@@ -16,9 +16,9 @@ class CategoryContainer extends Component {
         return (
             <div>
                 <label for="categories"><h2>Choose A Category: </h2></label>
-                <select name="categories"> {categorySelect}</select> 
+                <select name="categories"> {categorySelect}</select>
                 <br/><br/>
-                <button onClick={ () => {return(<CategoryForm/>)}}> Add New Category </button>
+                <CategoryForm />
             </div>
         )
         

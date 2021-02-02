@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import CategoryContainer from './containers/CategoryContainer';
+import CategoryForm from './containers/CategoryForm';
 import NonprofitContainer from './containers/NonprofitContainer';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
         <h1>Nonprofit Organizations</h1>
         <hr/>
         <CategoryContainer />
+        <hr/>
         <NonprofitContainer />
         
       </div>
