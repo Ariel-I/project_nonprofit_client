@@ -6,17 +6,26 @@ import CategoryForm from './containers/CategoryForm'
 
 class App extends Component {
 
+  componentDidMount(){
+    this.props.getCategories()
+  }
+
   render(){
 
-    const nonprofitCards = this.props.categories.map(category => <li key={category.id}>{category.name}</li>)
+    const nonprofitCards = this.props.categories.map(category => <option key={category.id}>{category.name}</option>)
 
     return (
       <div className="App ">
         <h1>Nonprofit Organizations</h1>
         <hr/>
-        <h2>Categories: -select box here-</h2>
-        <CategoryForm/>
-        <h3>{nonprofitCards}</h3>
+        <label for="categories"><h2>Choose A Category: </h2></label>
+        <select name="categories"> {nonprofitCards}</select> 
+        <br/><br/>
+        <button onClick={ () => {return(<CategoryForm/>)}}> Add New Category </button>
+        <br/><br/>
+        
+        <ul></ul>
+        
       </div>
     )
   }
