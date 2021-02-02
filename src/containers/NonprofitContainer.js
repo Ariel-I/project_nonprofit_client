@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getNonprofits} from '../actions/nonprofits'
-//import NonprofitForm from ''
+import NonprofitForm from './NonprofitForm'
 
 class NonProfit extends Component {
 
@@ -18,7 +18,7 @@ class NonProfit extends Component {
                 <ul>
                     {nonprofitCards}
                 </ul>
-             
+                <NonprofitForm />
             </div>
         )
     }

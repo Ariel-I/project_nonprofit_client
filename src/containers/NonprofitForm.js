@@ -40,7 +40,7 @@ class NonprofitForm extends Component {
                 description: "",
                 contact_info: "",
                 link: ""
-            }
+            },
             loading: false
         })
     }
@@ -64,4 +64,4 @@ class NonprofitForm extends Component {
 }
 
 
-export default NonprofitForm
+export default connect(null, {addNonprofit})(NonprofitForm)
