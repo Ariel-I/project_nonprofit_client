@@ -1,8 +1,14 @@
-export default function catgoryReducer(state = [], action) {
-    //let idx;
-    switch(action.type) {
+const catgoryReducer = (state= {
+    caetgories: [],
+    loading: false
+}, action) => {
+        //let idx;
+        switch(action.type) {
 
         default:
             return state;
+        }
     }
-}
+
+
+export default catgoryReducer

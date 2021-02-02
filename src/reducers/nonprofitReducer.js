@@ -1,4 +1,7 @@
-export default function nonprofitReducer(state = [], action) {
+const nonprofitReducer = (state = {
+    nonprofits: [],
+    loading: false
+}, action) => {
     //let idx;
     switch(action.type) {
 
@@ -6,3 +9,5 @@ export default function nonprofitReducer(state = [], action) {
             return state
     }
 }
+
+export default nonprofitReducer
