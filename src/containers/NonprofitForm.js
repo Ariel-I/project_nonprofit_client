@@ -50,12 +50,36 @@ class NonprofitForm extends Component {
         return(
             <div>
                 <form onSubmit={this.handleOnSubmit}>
-                    <input type="text" onChange={this.handleOnChange} value={this.state.nonprofit.name} />
-                    <input type="text" onChange={this.handleOnChange} value={this.state.nonprofit.location} />
-                    <input type="text" onChange={this.handleOnChange} value={this.state.nonprofit.description} />
-                    <input type="text" onChange={this.handleOnChange} value={this.state.nonprofit.contact_info} />
-                    <input type="text" onChange={this.handleOnChange} value={this.state.nonprofit.link} />
-
+                    <label>Nonprofit Name: </label>
+                    <input 
+                    type="text" 
+                    onChange={this.handleOnChange} 
+                    value={this.state.nonprofit.name} />
+                    <br/><br/>
+                    <label>Location: </label>
+                    <input 
+                    type="text" 
+                    onChange={this.handleOnChange} 
+                    value={this.state.nonprofit.location} />
+                    <br/><br/>
+                    <label>Description: </label>
+                    <input 
+                    type="text" 
+                    onChange={this.handleOnChange} 
+                    value={this.state.nonprofit.description} />
+                    <br/><br/>
+                    <label>Contact Info: </label>
+                    <input 
+                    type="text" 
+                    onChange={this.handleOnChange} 
+                    value={this.state.nonprofit.contact_info} />
+                    <br/><br/>
+                    <label>Link: </label>
+                    <input 
+                    type="text" 
+                    onChange={this.handleOnChange} 
+                    value={this.state.nonprofit.link} />
+                    <br/><br/>
                     <button type="submit">Add Nonprofit</button>
                 </form>
             </div>
