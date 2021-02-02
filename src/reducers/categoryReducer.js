@@ -9,6 +9,13 @@ const categoryReducer = (state= {
                     ...state,
                     loading: true
                 }
+            
+            case "FETCH_CATEGORIES":
+                return {
+                    ...state,
+                    categories: action.payload,
+                    loading: false
+                }
 
         default:
             return state;
