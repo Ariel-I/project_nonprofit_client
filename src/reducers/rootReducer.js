@@ -1,9 +1,9 @@
 import {combineReducers} from "redux"
-import catgoryReducer from "./categoryReducer"
+import categoryReducer from "./categoryReducer"
 import nonprofitReducer from "./nonprofitReducer"
 
 const rootReducer = combineReducers({
-    catgoryReducer, 
+    categoryReducer, 
     nonprofitReducer
 });
 

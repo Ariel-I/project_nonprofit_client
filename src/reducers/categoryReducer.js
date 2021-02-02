@@ -1,4 +1,4 @@
-const catgoryReducer = (state= {
+const categoryReducer = (state= {
     categories: [],
     loading: false
 }, action) => {
@@ -11,4 +11,4 @@ const catgoryReducer = (state= {
     }
 
 
-export default catgoryReducer
+export default categoryReducer
