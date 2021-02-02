@@ -29,7 +29,7 @@ class CategoryForm extends Component {
         this.setState({
             category: {
                 name: ""
-            }
+            },
             loading: false
         })
     }
