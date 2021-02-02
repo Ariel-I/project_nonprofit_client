@@ -7,7 +7,7 @@ export const getCategories = () => {
     }
 }
 
-export const addCategory = () => {
+export const addCategory = category => {
     return(dispatch) => {
         dispatch({type: "ADD_CATEGORY"})
         fetch('/categories', {
