@@ -1,5 +1,5 @@
 const catgoryReducer = (state= {
-    caetgories: [],
+    categories: [],
     loading: false
 }, action) => {
         //let idx;
