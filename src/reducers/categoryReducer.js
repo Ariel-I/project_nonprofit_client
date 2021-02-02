@@ -4,6 +4,11 @@ const categoryReducer = (state= {
 }, action) => {
         //let idx;
         switch(action.type) {
+            case "LOADING_CATEGORIES":
+                return {
+                    ...state,
+                    loading: true
+                }
 
         default:
             return state;

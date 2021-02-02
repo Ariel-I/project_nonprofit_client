@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {connect} from 'react-redux'
+import {getCategories} from './actions/categories'
 
 class App extends Component {
 
@@ -27,4 +28,4 @@ const mapStateToProps = state => {
   }
 }
  
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {getCategories})(App);
