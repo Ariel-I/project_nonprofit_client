@@ -5,6 +5,10 @@ import {getNonprofits} from '../actions/nonprofits'
 
 class NonProfit extends Component {
 
+    componentDidMount(){
+        this.props.getNonprofits()
+    }
+
     render(){
 
         const nonprofitCards = this.props.nonprofits.map(np => <li key={np.id}>{np.name}</li>)
@@ -14,7 +18,7 @@ class NonProfit extends Component {
                 <ul>
                     {nonprofitCards}
                 </ul>
-                <Nonprofits />
+             
             </div>
         )
     }
@@ -22,7 +26,7 @@ class NonProfit extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("I am state", state)
+    //console.log("I am state", state)
     return {
         nonprofits: state.nonprofitReducer.nonprofits,
         loading: state.nonprofitReducer.loading

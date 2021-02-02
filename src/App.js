@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import CategoryContainer from './containers/CategoryContainer';
+import NonprofitContainer from './containers/NonprofitContainer';
 
 class App extends Component {
 
@@ -11,6 +12,7 @@ class App extends Component {
         <h1>Nonprofit Organizations</h1>
         <hr/>
         <CategoryContainer />
+        <NonprofitContainer />
         
       </div>
     )
