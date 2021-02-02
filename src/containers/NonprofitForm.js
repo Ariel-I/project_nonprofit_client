@@ -19,11 +19,7 @@ class NonprofitForm extends Component {
         this.setState({...this.state,
             nonprofit: {
                 ...this.state.nonprofit,
-                name: event.target.value,
-                location: event.target.value,
-                description: event.target.value,
-                contact_info: event.target.value,
-                link: event.target.value
+                [event.target.name]: event.target.value
             }
         })
     }
@@ -53,30 +49,35 @@ class NonprofitForm extends Component {
                     <label>Nonprofit Name: </label>
                     <input 
                     type="text" 
+                    name="name"
                     onChange={this.handleOnChange} 
                     value={this.state.nonprofit.name} />
                     <br/><br/>
                     <label>Location: </label>
                     <input 
                     type="text" 
+                    name="location"
                     onChange={this.handleOnChange} 
                     value={this.state.nonprofit.location} />
                     <br/><br/>
                     <label>Description: </label>
                     <input 
                     type="text" 
+                    name="description"
                     onChange={this.handleOnChange} 
                     value={this.state.nonprofit.description} />
                     <br/><br/>
                     <label>Contact Info: </label>
                     <input 
                     type="text" 
+                    name="contact_info"
                     onChange={this.handleOnChange} 
                     value={this.state.nonprofit.contact_info} />
                     <br/><br/>
                     <label>Link: </label>
                     <input 
                     type="text" 
+                    name="link"
                     onChange={this.handleOnChange} 
                     value={this.state.nonprofit.link} />
                     <br/><br/>
