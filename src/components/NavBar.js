@@ -4,14 +4,11 @@ import { Link } from 'react-router-dom'
 class NavBar extends Component {
     render(){
         return(
-            <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <Link to='/'>Nonprofits</Link>
-                    <a class="nav-link" href="#">About</a>
-                    <a class="nav-link" href="#">Categories</a>
-
-                </nav>
-            </div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">PROJECT NONPROFIT</a>
+                </div>
+            </nav>
         )
     }
 }
