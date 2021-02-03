@@ -26,7 +26,7 @@ class NonprofitForm extends Component {
 
     handleOnSubmit = event => {
         event.preventDeafult();
-        const nonprofit = {...this.state.nonprofit, categoryId: this.props.categoryId}
+        const nonprofit = {...this.state.nonprofit, category_id: this.props.categoryId}
         console.log(nonprofit)
         this.props.addNonprofit(nonprofit)
         this.setState({

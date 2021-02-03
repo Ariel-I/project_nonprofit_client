@@ -11,12 +11,15 @@ class CategoryContainer extends Component {
 
     render(){
 
-        const categorySelect = this.props.categories.map(category => <option key={category.id}>{category.name}</option>)
+        const categorySelect = this.props.categories.map(category => 
+            <li key={category.id}>{category.name}</li>)
 
         return (
             <div>
-                <label htmlFor="categories"><h2>Choose A Category: </h2></label>
-                <select name="categories"> {categorySelect}</select>
+                <h2>Choose A Category: </h2>
+                <ul>
+                    {categorySelect}
+                </ul>
                 <br/><br/>
                 <CategoryForm />
             </div>
