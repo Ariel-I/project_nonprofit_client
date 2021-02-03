@@ -21,15 +21,15 @@ class NonProfit extends Component {
                 <div className="card-body">
                     <p className="card-text" key={np.id}>{np.description}</p>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Location: {np.location}</small>
+                <div className="card-footer">
+                    <small className="text-muted">Location: {np.location}</small>
                 </div>
             </div>
           </div>
         )
 
         return(
-            <div class="container">
+            <div className="container">
                 {npCards}
                 <hr/>
                 <NonprofitForm />
