@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
 import CategoryContainer from './containers/CategoryContainer';
-import CategoryForm from './containers/CategoryForm';
+//import CategoryForm from './containers/CategoryForm';
 import NonprofitContainer from './containers/NonprofitContainer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
 
