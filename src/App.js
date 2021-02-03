@@ -18,7 +18,6 @@ class App extends Component {
         <div className="App ">
           <NavBar />
           <Jumbotron />
-          <hr/>
           <CategoryContainer />
           <hr/>
           <NonprofitContainer />
