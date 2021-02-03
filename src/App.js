@@ -6,6 +6,7 @@ import NonprofitContainer from './containers/NonprofitContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Jumbotron from './components/Jumbotron';
 
 
 class App extends Component {
@@ -16,7 +17,7 @@ class App extends Component {
       <Router>
         <div className="App ">
           <NavBar />
-          <h1>Nonprofit Organizations</h1>
+          <Jumbotron />
           <hr/>
           <CategoryContainer />
           <hr/>
