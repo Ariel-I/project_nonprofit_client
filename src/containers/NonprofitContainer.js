@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getNonprofits} from '../actions/nonprofits'
-import Nonprofits from '../components/nonprofits/Nonprofits'
+//import Nonprofits from '../components/nonprofits/Nonprofits'
 import NonprofitForm from './NonprofitForm'
 
 class NonProfit extends Component {
@@ -15,14 +15,14 @@ class NonProfit extends Component {
         const npCards = this.props.nonprofits.map(np =>
           <div className="card-columns">
             <div className="card" style={{width: '18rem'}}>
-              <div className="card-header">{np.name}</div>
+              <div className="card-header" key={np.id}>{np.name}</div>
                 <img className="card-img-top" src="..." alt="Card image cap" />
                 <hr/>
                 <div className="card-body">
                     <p className="card-text" key={np.id}>{np.description}</p>
                 </div>
                 <div className="card-footer">
-                    <small className="text-muted">Location: {np.location}</small>
+                    <small className="text-muted" key={np.id}>Location: {np.location}</small>
                 </div>
             </div>
           </div>
