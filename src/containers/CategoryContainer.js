@@ -15,7 +15,7 @@ class CategoryContainer extends Component {
 
         return (
             <div>
-                <label for="categories"><h2>Choose A Category: </h2></label>
+                <label htmlFor="categories"><h2>Choose A Category: </h2></label>
                 <select name="categories"> {categorySelect}</select>
                 <br/><br/>
                 <CategoryForm />
@@ -27,7 +27,7 @@ class CategoryContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("I am the state", state)
+    //console.log("I am the state", state)
     return {
       categories: state.categoryReducer.categories,
       loading: state.categoryReducer.loading

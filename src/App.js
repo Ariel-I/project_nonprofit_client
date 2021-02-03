@@ -4,6 +4,7 @@ import CategoryContainer from './containers/CategoryContainer';
 //import CategoryForm from './containers/CategoryForm';
 import NonprofitContainer from './containers/NonprofitContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar'
 
 class App extends Component {
 
@@ -11,6 +12,7 @@ class App extends Component {
 
     return (
       <div className="App ">
+        <NavBar />
         <h1>Nonprofit Organizations</h1>
         <hr/>
         <CategoryContainer />
