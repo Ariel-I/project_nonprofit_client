@@ -5,21 +5,24 @@ import CategoryContainer from './containers/CategoryContainer';
 import NonprofitContainer from './containers/NonprofitContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+
 
 class App extends Component {
 
   render(){
 
     return (
-      <div className="App ">
-        <NavBar />
-        <h1>Nonprofit Organizations</h1>
-        <hr/>
-        <CategoryContainer />
-        <hr/>
-        <NonprofitContainer />
-        
-      </div>
+      <Router>
+        <div className="App ">
+          <NavBar />
+          <h1>Nonprofit Organizations</h1>
+          <hr/>
+          <CategoryContainer />
+          <hr/>
+          <NonprofitContainer />
+        </div>
+      </Router>
     )
   }
 }
