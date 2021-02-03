@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Home from './components/Home';
+import Category from './components/categories/Category'
 
 
 class App extends Component {
@@ -17,10 +18,11 @@ class App extends Component {
       <div className="App ">
         <Router>
           <NavBar />
+          
           <div >
             <Route exact path='/' component={Home} />
-            <CategoryContainer />
-            <Route exact path="/categories/:id/nonprofits" component={CategoryContainer} />
+            
+            <Route exact path="/categories/:id/nonprofits" component={Category} />
             <Route exact path="/categories/:id/nonprofits/:id" component={NonprofitContainer} />
             <hr/>
             
