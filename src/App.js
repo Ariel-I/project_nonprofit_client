@@ -6,7 +6,7 @@ import NonprofitContainer from './containers/NonprofitContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import Jumbotron from './components/Jumbotron';
+import Home from './components/Home';
 
 
 class App extends Component {
@@ -14,15 +14,18 @@ class App extends Component {
   render(){
 
     return (
-      <Router>
-        <div className="App ">
-          <NavBar />
-          <Jumbotron />
-          <CategoryContainer />
-          <hr/>
-          <NonprofitContainer />
-        </div>
-      </Router>
+      <div className="App ">
+        <NavBar />
+        <Home />
+        <Router>
+          <div >
+            <Router exact path='/' component={Home} />
+            <CategoryContainer />
+            <hr/>
+            <NonprofitContainer />
+          </div>
+        </Router>
+      </div>
     )
   }
 }
