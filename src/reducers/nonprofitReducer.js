@@ -21,6 +21,7 @@ const nonprofitReducer = (state = {
         case "ADD_NONPROFIT":
             return {
                 ...state,
+                nonprofits: [...state.nonprofits],
                 loading: true
             }
 
