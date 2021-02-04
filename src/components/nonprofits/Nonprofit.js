@@ -1,13 +1,29 @@
-import React from 'react'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 
-const Nonprofit = () => {
+class Nonprofit extends Component {
 
-    return(
-        <div>
-            <p>render specific nonprofit page here</p>
-        </div>
-        
-    )
+    render(){
+
+        const np = this.props.nonprofits.map(np => {
+            <li key={np.id}>{np.name}</li>
+        })
+
+        return(
+            <div>
+                <p>render specific nonprofit page here</p>
+                {np}
+                
+            </div>
+            
+        )
+    }
 }
 
-export default Nonprofit 
+const mapStateToProps = state => {
+    return {
+        nonprofits: state.nonprofitReducer.nonprofits
+    }
+}
+
+export default connect(mapStateToProps)(Nonprofit)
