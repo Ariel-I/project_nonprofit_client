@@ -43,8 +43,8 @@ class NonProfit extends Component {
 const mapStateToProps = state => {
     //console.log("I am state", state)
     return {
-        nonprofits: state.nonprofitReducer.nonprofits,
-        loading: state.nonprofitReducer.loading
+        nonprofits: state.categoryReducer.nonprofits,
+        //loading: state.categoryReducer.loading
     }
 }
 

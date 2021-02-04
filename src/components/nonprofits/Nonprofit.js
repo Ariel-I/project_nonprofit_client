@@ -5,11 +5,14 @@ class Nonprofit extends Component {
 
     render(){
 
-        const nonprofit = this.props
+        const id = this.props.match.params.id 
+        
+        let nonprofit = this.props.nonprofits.filter(np => np.id === parseInt(id))
+        console.log(nonprofit)
 
         return(
             <div>
-                <h2>{nonprofit.name}</h2>
+                <h2>{nonprofit.name}hi</h2>
             </div>
         )
     }
@@ -17,7 +20,7 @@ class Nonprofit extends Component {
 
 const mapStateToProps = state => {
     return {
-        nonprofits: state.nonprofitReducer.nonprofits
+        nonprofits: state.categoryReducer.nonprofits,
     }
 }
 
