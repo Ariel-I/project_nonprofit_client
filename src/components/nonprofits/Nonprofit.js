@@ -5,17 +5,12 @@ class Nonprofit extends Component {
 
     render(){
 
-        const np = this.props.nonprofits.map(np => {
-            <li key={np.id}>{np.name}</li>
-        })
+        const nonprofit = this.props
 
         return(
             <div>
-                <p>render specific nonprofit page here</p>
-                {np}
-                
+                <h2>{nonprofit.name}</h2>
             </div>
-            
         )
     }
 }
