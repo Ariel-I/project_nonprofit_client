@@ -6,6 +6,7 @@ const Category = (props) => {
 
     return(
         <div>
+            
             <h3>render nonprofits of specific category here</h3>
         </div>
     )
