@@ -3,7 +3,7 @@ import React from 'react'
 const Category = (props) => {
 
    // let category = props.categories.filter(c => c.id == props.match.params.id)[0]
-
+    //console.log(category)
     return(
         <div>
             

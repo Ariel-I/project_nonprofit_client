@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-//import CategoryContainer from './containers/CategoryContainer';
-//import CategoryForm from './containers/CategoryForm';
 import NonprofitContainer from './containers/NonprofitContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
@@ -18,12 +16,12 @@ class App extends Component {
       <div>
         <Router>
           <NavBar />
-          
           <Switch>
             <Route exact path='/' component={Home} />
-            
             <Route exact path="/categories/:id/nonprofits" component={Category} />
+
             <Route exact path="/categories/:id/nonprofits/:id" component={Nonprofit} />
+
             <Route exact path="/nonprofits" component={NonprofitContainer} />
             <hr/>
             
