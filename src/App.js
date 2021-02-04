@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Home from './components/Home';
 import Category from './components/categories/Category'
+import Nonprofit from './components/nonprofits/Nonprofit'
 
 
 class App extends Component {
@@ -23,7 +24,8 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             
             <Route exact path="/categories/:id/nonprofits" component={Category} />
-            <Route exact path="/categories/:id/nonprofits/:id" component={NonprofitContainer} />
+            <Route exact path="/categories/:id/nonprofits/:id" component={Nonprofit} />
+            <Route exact path="/nonprofits" component={NonprofitContainer} />
             <hr/>
             
           </div>

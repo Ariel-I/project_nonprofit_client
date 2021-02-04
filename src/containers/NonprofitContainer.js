@@ -31,8 +31,6 @@ class NonProfit extends Component {
         return(
             <div className="container">
                 {npCards}
-                <hr/>
-                <NonprofitForm />
             </div>
         )
     }
