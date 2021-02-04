@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getNonprofits} from '../actions/nonprofits'
 //import Nonprofits from '../components/nonprofits/Nonprofits'
-import NonprofitForm from './NonprofitForm'
+//import NonprofitForm from './NonprofitForm'
 
 class NonProfit extends Component {
 
@@ -13,7 +13,7 @@ class NonProfit extends Component {
     render(){
 
         const npCards = this.props.nonprofits.map(np =>
-          <div className="card-columns">
+          <div className="card-group">
             <div className="card" style={{width: '18rem'}}>
               <div className="card-header" key={np.id}>{np.name}</div>
                 <img className="card-img-top" src="..." alt="Card image cap" />

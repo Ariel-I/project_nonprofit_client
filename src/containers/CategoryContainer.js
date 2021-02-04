@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {getCategories} from '../actions/categories'
 //import CategoryForm from '../containers/CategoryForm'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 
 class CategoryContainer extends Component {
@@ -14,16 +14,17 @@ class CategoryContainer extends Component {
     render(){
 
         const categorySelect = this.props.categories.map(category => 
-           <li><Link to='/categories/:id/nonprofits' key={category.id}>{category.name}</Link></li> )
+           <Link to='/categories/:id/nonprofits' key={category.id}>{category.name}</Link> )
 
         return (
             <div>
                 <h2>Choose A Category: </h2>
                 <Router>
+                    <Switch>
                     <ul>
                         <li>{categorySelect} </li>
                     </ul>
-                    
+                    </Switch>
                 </Router>
             </div>
         )
