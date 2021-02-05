@@ -1,27 +1,44 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import NonprofitContainer from '../../containers/NonprofitContainer'
 
-class Nonprofit extends Component {
+const Nonprofit = ({name, location }) => {
 
-    render(){
-
-        const id = this.props.match.params.id 
+        //const id = this.props.match.params.id 
         
-        let nonprofit = this.props.nonprofits.filter(np => np.id === parseInt(id))
-        console.log(nonprofit)
+       // let showNonprofit = this.props.categories.find(np => np. )
+        //console.log(showNonprofit)
 
-        return(
-            <div>
-                <h2>{nonprofit.name}hi</h2>
-            </div>
-        )
-    }
+        //let y = this.props.categories.filter(c => c.id === parseInt(id))
+
+        // let x = y.map(c => {
+        //     return(
+        //         <div key={c.id}>
+        //             {
+        //                 c.nonprofits.map(np => {
+        //                     return(
+        //                         <h2 key={np.category_id}>{np.name}</h2>
+        //                     )
+        //                 })
+        //             }
+        //         </div>
+        //     )
+        // })
+
+        //let nonprofits = props.nonprofits.filter(c => c.id === props.match.params.id)[0]
+        
+        //console.log(np)
+
+    return(
+        <div >
+            <p>render specific nonprofit page here </p>
+            {name}
+        </div>    
+    )    
+        
+    
 }
 
-const mapStateToProps = state => {
-    return {
-        nonprofits: state.categoryReducer.nonprofits,
-    }
-}
 
-export default connect(mapStateToProps)(Nonprofit)
+
+export default Nonprofit
