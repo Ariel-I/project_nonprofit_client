@@ -44,10 +44,15 @@ const categoryReducer = (state= {
             }
 
         case "ADD_NONPROFIT":
+            let np = state.noprofits.map(nonprofit => {
+                if (nonprofit.id === action.payload.id){
+                    return action.payload
+                } else {
+                    return nonprofit
+                }
+            })
             return {
-                ...state,
-                nonprofits: [...state.nonprofits],
-                loading: true
+                ...state, nonprofit: np
             }
 
         case "NONPROFTI_ADDED":
