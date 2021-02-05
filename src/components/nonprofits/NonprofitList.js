@@ -1,13 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {getNonprofits} from '../../actions/nonprofits'
 import {Link} from 'react-router-dom'
 
 class NonprofitList extends Component {
-    
-    componentDidMount(){
-        this.props.getNonprofits()
-    }
+
     
     render(){
 
@@ -27,7 +23,7 @@ class NonprofitList extends Component {
                   </div>
               </div>
             </div>
-        )
+          )
 
         return(
             <div className="container">
@@ -45,4 +41,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getNonprofits})(NonprofitList)
+export default connect(mapStateToProps)(NonprofitList)

@@ -42,7 +42,9 @@ class Category extends Component {
         
         return(
             <div>
-                {categoryNonprofits}
+                <div className="container">
+                    {categoryNonprofits}
+                </div>   
                 <hr/>
                 <h4>Add A New Nonprofit: </h4>
                 <NonprofitForm/>
