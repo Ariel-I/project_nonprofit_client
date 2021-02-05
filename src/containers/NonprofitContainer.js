@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import NonprofitList from '../components/nonprofits/NonprofitList'
 import {getNonprofits} from '../actions/nonprofits'
+import NonprofitList from '../components/nonprofits/NonprofitList'
 
 class NonProfit extends Component {
 
@@ -11,15 +11,13 @@ class NonProfit extends Component {
 
     render(){
 
-        // const nonprofits = this.props.nonprofits.map( nonp => {
-        //     return(
-        //         <NonprofitList key={nonp.id} nonprofit={nonp}/>
-        //     )
-        // })
+        
+        const nonprofitList = this.props.nonprofits.map(np => <NonprofitList key={np.id} nonprofit={np}/>)
+        //const nonprofitList = this.props.nonprofits.map(np => <li key={np.id}>{np.name}</li>)
 
         return(
             <div className="container">
-                <NonprofitList />
+                {nonprofitList}
             </div>
         )
     }

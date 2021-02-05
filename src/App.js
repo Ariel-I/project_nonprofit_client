@@ -18,11 +18,11 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path="/categories/:id/nonprofits" component={Category} />
+            <Route  path="/categories/:id/nonprofits" component={Category} />
 
-            <Route exact path="/categories/:id/nonprofits/:id" component={Nonprofit} />
+            <Route  exact path="/categories/:id/nonprofits/:id" component={Nonprofit} />
 
-            <Route exact path="/nonprofits" component={NonprofitContainer} />
+            <Route  path="/nonprofits" component={NonprofitContainer} />
             <hr/>
             
           </Switch>

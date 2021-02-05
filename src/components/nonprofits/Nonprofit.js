@@ -1,47 +1,14 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React from 'react'
+//import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
-class Nonprofit extends Component {
+const Nonprofit = (props) => {
 
-    render(){
-
-        const id = this.props.match.params.id 
-
-        let y = this.props.categories.filter(c => c.id === parseInt(id))
-
-        let x = y.map(c => {
-            return(
-                <div key={c.id}>
-                    {
-                        c.nonprofits.map(np => {
-                            return(
-                                <div >
-                                <h2 key={np.category_id}>{np.name}</h2>
-                                <p>{np.location}</p>
-                                <p>{np.description}</p>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            )
-        })
-
-        return (
-            <div >
-                <p>render nonprofit page here</p>
-                {x}
-            </div>    
-        )    
-        
-    }
+    return(
+        <div>
+            <Link to={`/categories/${props.category_id}`}>{props.nonprofit.name}</Link>
+        </div>
+    )
 }
 
-const mapStateToProps = state => {
-    return {
-        categories: state.categoryReducer.categories,
-        nonprofits: state.categoryReducer.nonprofits
-    }
-}
-
-export default connect(mapStateToProps)(Nonprofit)
+export default Nonprofit

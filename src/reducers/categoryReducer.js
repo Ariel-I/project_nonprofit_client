@@ -17,24 +17,18 @@ const categoryReducer = (state= {
                 loading: false
             }
 
-        case "ADD_CATEGORY":
-            return {
-                ...state,
-                loading: true
-            }        
+        // case "ADD_CATEGORY":
+        //     return {
+        //         ...state,
+        //         loading: true
+        //     }        
 
-        case "CATEGORY_ADDED":
-            return {
-                ...state,
-                categories: [...state.categories, action.payload],
-                loading: false
-            }
-
-        case "LOADING_NONPROFITS":
-            return {
-                ...state,
-                loading: true
-            }
+        // case "CATEGORY_ADDED":
+        //     return {
+        //         ...state,
+        //         categories: [...state.categories, action.payload],
+        //         loading: false
+        //     }
             
         case "FETCH_NONPROFITS":
             return {
@@ -44,22 +38,23 @@ const categoryReducer = (state= {
             }
 
         case "ADD_NONPROFIT":
-            let np = state.noprofits.map(nonprofit => {
-                if (nonprofit.id === action.payload.id){
-                    return action.payload
+           return{
+               ...state, 
+               loading: true
+           }
+
+        case "NONPROFTI_ADDED":
+           let np = state.categories.map(c => {
+                if (c.id === action.payload.category_id){
+                    return {...c, nonprofits: [...c.nonprofits, action.payload]}
                 } else {
-                    return nonprofit
+                    return c
                 }
             })
             return {
-                ...state, nonprofit: np
-            }
-
-        case "NONPROFTI_ADDED":
-            return {
-                ...state,
-                nonprofits: [...state.nonprofits, action.payload],
-                loading: false
+                ...state, 
+                nonprofit: np,
+                loading: false 
             }
 
         default:

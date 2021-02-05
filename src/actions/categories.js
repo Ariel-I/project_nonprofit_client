@@ -21,3 +21,18 @@ export const addCategory = category => {
         .then(category => dispatch({type: "CATEGORY_ADDED", payload: category}))
     }
 }
+
+export const addCategoryNonprofit = nonprofit => {
+    return(dispatch) => {
+        dispatch({type: "ADD_CATEGORY_NONPROFIT"})
+        fetch('/categories', {
+            method: 'POST',
+            body: JSON.stringify(nonprofit),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(nonprofit => dispatch({type: "CATEGORY_NONPROFIT_ADDED", payload: nonprofit}))
+    }
+}

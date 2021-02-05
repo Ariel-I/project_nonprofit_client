@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {addNonprofit} from '../actions/nonprofits'
+//import {addNonprofit} from '../actions/nonprofits'
+import {addCategoryNonprofit} from '../actions/categories'
 
 class NonprofitForm extends Component {
 
@@ -26,9 +27,9 @@ class NonprofitForm extends Component {
 
     handleOnSubmit = event => {
         event.preventDeafult();
-        const nonprofit = {...this.state.nonprofit, category_id: this.props.categoryId}
+        const nonprofit = {...this.state.nonprofit, category_id: this.props.category_id}
         console.log(nonprofit)
-        this.props.addNonprofit(nonprofit)
+        this.props.addCategoryNonprofit(nonprofit)
         this.setState({
             nonprofit: {
                 name: "",
@@ -89,4 +90,4 @@ class NonprofitForm extends Component {
 }
 
 
-export default connect(null, {addNonprofit})(NonprofitForm)
+export default connect(null, {addCategoryNonprofit})(NonprofitForm)
