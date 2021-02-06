@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import NonprofitForm from '../../containers/NonprofitForm'
-import Nonprofit from '../nonprofits/Nonprofit'
+import {Link} from 'react-router-dom'
 
 class Category extends Component {
 
     render(){
         
-        const category = this.props.categories.find(c => `${c.id}` === this.props.match.params.id)
-        const npList = category.nonprofits.map(np => <Nonprofit key={np.id} nonprofit={np}/>)
+        const category = this.props.categories.find(c => `${c.id}` === this.props.match.params.category_id)
+        const npList = category.nonprofits.map(np => <li key={np.id}><Link to={`nonprofits/${np.id}`}>{np.name}</Link></li>)
 
         return(
             <div>
@@ -18,11 +18,11 @@ class Category extends Component {
                 <hr/>
                 <ul>
                     <li>
-                        <h3>{npList}</h3>
+                        {npList}
                     </li>
                     
                 </ul>
-                
+                <hr/>
                 <h4>Add A New Nonprofit: </h4>
                 <NonprofitForm category_id={category.id}/>
             </div>
@@ -33,6 +33,7 @@ class Category extends Component {
 const mapStateToProps = state => {
     return {
         categories: state.categoryReducer.categories,
+        nonprofits: state.categoryReducer.nonprofits
     }
 }
 

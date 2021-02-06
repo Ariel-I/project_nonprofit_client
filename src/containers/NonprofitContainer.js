@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getNonprofits} from '../actions/nonprofits'
+import Nonprofit from '../components/nonprofits/Nonprofit'
 import NonprofitList from '../components/nonprofits/NonprofitList'
 
 class NonProfit extends Component {
@@ -13,7 +14,6 @@ class NonProfit extends Component {
 
         
         const nonprofitList = this.props.nonprofits.map(np => <NonprofitList key={np.id} nonprofit={np}/>)
-        //const nonprofitList = this.props.nonprofits.map(np => <li key={np.id}>{np.name}</li>)
 
         return(
             <div className="container">
@@ -27,6 +27,7 @@ class NonProfit extends Component {
 const mapStateToProps = state => {
     return {
         nonprofits: state.categoryReducer.nonprofits,
+        categories: state.categoryReducer.categories
     }
 }
 

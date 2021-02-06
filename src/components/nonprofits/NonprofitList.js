@@ -9,7 +9,7 @@ const NonprofitList = (props) => {
             <div className="card-group" >
               <div className="card" style={{width: '18rem'}}>
                 <div className="card-header" >
-                    <Link to={`/categories/${props.nonprofit.category_id}/nonprofits/${props.nonprofit.id}`}>{props.nonprofit.name}</Link>
+                    <Link to={`/nonprofits/${props.nonprofit.id}`}>{props.nonprofit.name}</Link>
                 </div>
                   <img className="card-img-top" src="..." alt="Card image cap" />
                   <hr/>

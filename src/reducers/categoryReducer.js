@@ -30,6 +30,12 @@ const categoryReducer = (state= {
         //         loading: false
         //     }
             
+        case "LOADING_NONPROFITS":
+            return {
+                ...state,
+                loading: true
+            }
+
         case "FETCH_NONPROFITS":
             return {
                 ...state,
