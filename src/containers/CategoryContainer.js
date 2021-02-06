@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
-//import {BrowserRouter as Router, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getCategories} from '../actions/categories'
 import CategoryList from '../components/categories/CategoryList'
+import CategoryForm from '../containers/CategoryForm'
+
 
 class CategoryContainer extends Component {
 
@@ -18,6 +19,8 @@ class CategoryContainer extends Component {
             <div className="container">
                 <h2>Choose A Category: </h2>
                     {categoryList}
+                <h3>Add A New Category:</h3>
+                    <CategoryForm/>
                 </div>    
         )
     }

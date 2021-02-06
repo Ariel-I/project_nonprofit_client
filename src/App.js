@@ -21,8 +21,9 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route exact path="/categories" component={CategoryContainer}/>
             <Route exact path="/categories/:category_id/nonprofits" component={Category} />
-            <Route exact path="/nonprofits" component={NonprofitContainer} />
             <Route exact path="/nonprofits/:id" component={Nonprofit} />
+            <Route exact path="/nonprofits" component={NonprofitContainer} />
+            
             
             <hr/>
             

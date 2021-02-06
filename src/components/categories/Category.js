@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import NonprofitForm from '../../containers/NonprofitForm'
+//import NonprofitForm from '../../containers/NonprofitForm'
 import {Link} from 'react-router-dom'
 
 class Category extends Component {
@@ -22,9 +22,6 @@ class Category extends Component {
                     </li>
                     
                 </ul>
-                <hr/>
-                <h4>Add A New Nonprofit: </h4>
-                <NonprofitForm category_id={category.id}/>
             </div>
         )
     }
