@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-//import NonprofitForm from '../../containers/NonprofitForm'
 import {Link} from 'react-router-dom'
+import NonprofitForm from '../../containers/NonprofitForm'
 
 class Category extends Component {
 
@@ -13,15 +13,15 @@ class Category extends Component {
         return(
             <div>
                 <div className="container">
-                   <h2>Category: {category.name}</h2> 
+                   <h2>{category.name}</h2> 
                 </div>   
                 <hr/>
                 <ul>
-                    <li>
-                        {npList}
-                    </li>
-                    
+                    {npList}
                 </ul>
+                <hr/>
+                <h3>Add a new nonprofit</h3>
+                <NonprofitForm category_id={category.id}/>
             </div>
         )
     }
