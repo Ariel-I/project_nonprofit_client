@@ -50,17 +50,10 @@ const categoryReducer = (state= {
            }
 
         case "NONPROFTI_ADDED":
-           let np = state.categories.map(c => {
-                if (c.id === action.payload.category_id){
-                    return {...c, nonprofits: [...c.nonprofits, action.payload]}
-                } else {
-                    return c
-                }
-            })
             return {
-                ...state, 
-                nonprofit: np,
-                loading: false 
+                ...state,
+                nonprofits: [...state.nonprofits, action.event],
+                loading: false
             }
 
         default:

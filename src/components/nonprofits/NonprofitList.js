@@ -3,7 +3,6 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const NonprofitList = (props) => {
-    console.log(props)
     
    return(
             <div className="card-group" >
@@ -11,7 +10,7 @@ const NonprofitList = (props) => {
                 <div className="card-header" >
                     <Link to={`/nonprofits/${props.nonprofit.id}`}>{props.nonprofit.name}</Link>
                 </div>
-                  <img className="card-img-top" src="..." alt="Card image cap" />
+                  <img className="card-img-top" src={props.nonprofit.image}  />
                   <hr/>
                   <div className="card-body">
                       <p className="card-text">{props.nonprofit.description}</p>

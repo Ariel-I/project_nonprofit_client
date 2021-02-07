@@ -25,7 +25,7 @@ export const addCategory = category => {
 export const addCategoryNonprofit = nonprofit => {
     return(dispatch) => {
         dispatch({type: "ADD_CATEGORY_NONPROFIT"})
-        fetch('http://localhost:3001/nonprofits', {
+        fetch('http://localhost:3001/categories', {
             method: 'POST',
             body: JSON.stringify(nonprofit),
             headers: {

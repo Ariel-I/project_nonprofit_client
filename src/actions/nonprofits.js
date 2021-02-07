@@ -7,17 +7,17 @@ export const getNonprofits = () => {
     }
 }
 
-// export const addNonprofit = nonprofit => {
-//     return(dispatch) => {
-//         dispatch({type: "ADD_NONPROFIT"})
-//         fetch('http://localhost:3001/nonprofits', {
-//             method: 'POST',
-//             body: JSON.stringify(nonprofit),
-//             headers:{
-//                 'Content-Type': 'application/json'
-//             }
-//         }) 
-//         .then(resp => resp.json())
-//         .then(np => dispatch({type: "CATEGORY_ADDED", payload: np}))
-//     }
-// }
+export const addNonprofit = nonprofit => {
+    return(dispatch) => {
+        dispatch({type: "ADD_NONPROFIT"})
+        fetch('http://localhost:3001/nonprofits', {
+            method: 'POST',
+            body: JSON.stringify(nonprofit),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }) 
+        .then(resp => resp.json())
+        .then(np => dispatch({type: "NONPROFIT_ADDED", payload: np}))
+    }
+}

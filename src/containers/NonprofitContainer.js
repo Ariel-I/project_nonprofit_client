@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getNonprofits} from '../actions/nonprofits'
-import Nonprofit from '../components/nonprofits/Nonprofit'
 import NonprofitList from '../components/nonprofits/NonprofitList'
+import NonprofitForm from './NonprofitForm'
 
 class NonProfit extends Component {
 

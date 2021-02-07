@@ -11,20 +11,22 @@ class Nonprofit extends Component {
             <div>
                 <NonprofitBanner nonprofit={nonprofit}/>
             <hr/>
+            <div className="container">
             <div className="card-group" >
                 <div className="card" style={{width: '18rem'}}>
                     <div className="card-header" >
-                        {nonprofit.name}
                     </div>
-                    <img className="card-img-top" src="..." alt="Card image cap" />
+                    <img className="card-img-top" src={nonprofit.image} />
                     <hr/>
                     <div className="card-body">
                         <p className="card-text">{nonprofit.description}</p>
+                        <p className="card-text">Contact: {nonprofit.contact_info}</p>
                     </div>
                     <div className="card-footer">
-                        <small className="text-muted"></small>
+                        <small className="text-muted">{nonprofit.link}</small>
                     </div>
                 </div>
+            </div>
             </div>
             </div>
         )
