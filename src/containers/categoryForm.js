@@ -11,7 +11,6 @@ class CategoryForm extends Component {
         loading: false
     }
 
-
     handleOnChange = event => {
         this.setState({...this.state,
             category: {

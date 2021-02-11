@@ -8,7 +8,6 @@ import Home from './components/Home';
 import Category from './components/categories/Category'
 import Nonprofit from './components/nonprofits/Nonprofit'
 import CategoryContainer from './containers/CategoryContainer'
-import NonprofitForm from './containers/NonprofitForm'
 
 class App extends Component {
 
@@ -22,13 +21,8 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route exact path="/categories" component={CategoryContainer}/>
             <Route exact path="/categories/:category_id/nonprofits" component={Category} />
-
-            <Route exact path="/categories/new" component={NonprofitForm}/>
-
             <Route exact path="/nonprofits" component={NonprofitContainer} />
-            <Route exact path="nonprofits/new" component={NonprofitForm} />
             <Route exact path="/nonprofits/:id" component={Nonprofit} />
-
           </Switch>
         </Router>
       </div>

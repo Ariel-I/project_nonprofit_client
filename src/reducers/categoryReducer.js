@@ -29,7 +29,27 @@ const categoryReducer = (state= {
                 categories: [...state.categories, action.payload],
                 loading: false
             }
-            
+
+        case "ADD_NONPROFIT":
+           return{
+               ...state, 
+               loading: true
+           }
+
+        case "NONPROFTI_ADDED":
+            const category = state.categories.map(c => {
+                if (c.id === action.payload.category_id) {
+                    return {...c, nonprofits: [...c.nonprofits, action.payload]}
+                } else {
+                    return c
+                }
+            })
+            return {
+                ...state,
+                categories: category,
+                loading: false
+            }
+
         case "LOADING_NONPROFITS":
             return {
                 ...state,
@@ -41,20 +61,7 @@ const categoryReducer = (state= {
                 ...state,
                 nonprofits: action.payload,
                 loading: false
-            }
-
-        case "ADD_NONPROFIT":
-           return{
-               ...state, 
-               loading: true
-           }
-
-        case "NONPROFTI_ADDED":
-            return {
-                ...state,
-                nonprofits: [...state.nonprofits, action.event],
-                loading: false
-            }
+            }  
 
         default:
             return state;    

@@ -22,9 +22,9 @@ export const addCategory = category => {
     }
 }
 
-export const addCategoryNonprofit = nonprofit => {
+export const addNonprofit = nonprofit => {
     return(dispatch) => {
-        dispatch({type: "ADD_CATEGORY_NONPROFIT"})
+        dispatch({type: "ADD_NONPROFIT"})
         fetch('http://localhost:3001/categories', {
             method: 'POST',
             body: JSON.stringify(nonprofit),
@@ -33,6 +33,6 @@ export const addCategoryNonprofit = nonprofit => {
             }
         })
         .then(resp => resp.json())
-        .then(nonprofit => dispatch({type: "CATEGORY_NONPROFIT_ADDED", payload: nonprofit}))
+        .then(nonprofit => dispatch({type: "NONPROFIT_ADDED", payload: nonprofit}))
     }
 }

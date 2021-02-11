@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {getCategories} from '../actions/categories'
-import {addNonprofit} from '../actions/nonprofits'
+import {addNonprofit} from '../actions/categories'
 
 class NonprofitForm extends Component {
 
@@ -12,8 +11,7 @@ class NonprofitForm extends Component {
             description: "",
             contact_info: "",
             link: "",
-            image: "",
-            category_id: this.props.categoryId
+            image: ""
         },
         loading: false
     }
@@ -27,46 +25,31 @@ class NonprofitForm extends Component {
         })
     }
 
-
-    handleSelect = event => {
-        this.setState({
-            ...this.state,
-            nonprofit: {
-                ...this.state.nonprofit,
-                category_id: this.props.categoryId || event.target.value
-            }
-        })
-    }
-
     handleOnSubmit = event => {
         event.preventDeafult();
-        const nonprofit = {...this.state.nonprofit}
-        this.props.addCategory(nonprofit)
+        const nonprofit = {...this.state.nonprofit, category_id: this.props.category_id}
+        console.log(nonprofit)
+        this.props.addNonprofit(nonprofit)
         this.setState({
             nonprofit: {
                 name: "",
                 location: "",
                 description: "",
                 contact_info: "",
-                link: "",
-                category_id: this.categoryId
+                link: ""
             },
             loading: false
         })
+        //this.props.history.push("/categories/:category_id/nonprofits")
     }
 
 
     render(){
 
-        const selectCategory = this.props.categories.map( (category, i) => {
-            return (
-                <option key={category.id} value={category.id}>{category.name}</option>
-            )
-        })
-
         return(
             <div className="container">
-                <form onSubmit={this.handleOnSubmit}>
+                <hr/>
+                <form onSubmit={ () => this.handleOnSubmit}>
                     <label>Nonprofit Name: </label>
                     <input 
                     type="text" 
@@ -107,13 +90,6 @@ class NonprofitForm extends Component {
                     value={this.state.nonprofit.link} />
                     <br/><br/>
 
-                    <label>Choose a Category: </label>
-                    <select id="categories" value={this.props.categoryId} onChange={this.handleSelect}>
-                        {selectCategory}
-                    </select>
-                    <br/>
-
-                    
                     <button type="submit">Add Nonprofit</button>
                 </form>
             </div>
@@ -121,10 +97,4 @@ class NonprofitForm extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        categories: state.categoryReducer.categories
-    }
-}
-
-export default connect(mapStateToProps, {getCategories, addNonprofit})(NonprofitForm)
+export default connect(null, {addNonprofit})(NonprofitForm)

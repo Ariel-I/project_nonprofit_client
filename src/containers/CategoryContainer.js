@@ -4,7 +4,6 @@ import {getCategories} from '../actions/categories'
 import CategoryList from '../components/categories/CategoryList'
 import CategoryForm from '../containers/CategoryForm'
 
-
 class CategoryContainer extends Component {
 
     componentDidMount(){
