@@ -1,14 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {getCategories} from '../actions/categories'
 import CategoryList from '../components/categories/CategoryList'
 import CategoryForm from '../containers/CategoryForm'
 
 class CategoryContainer extends Component {
-
-    componentDidMount(){
-        this.props.getCategories()
-    }
 
     render(){
       
@@ -32,4 +27,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getCategories})(CategoryContainer)
+
+export default connect(mapStateToProps)(CategoryContainer)

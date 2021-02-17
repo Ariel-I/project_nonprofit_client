@@ -15,12 +15,12 @@ class Nonprofit extends Component {
                     <div className="card-group" >
                         <div className="card" style={{width: '18rem'}}>
                             <div className="card-header" >
+                                Location: {nonprofit.location}
                             </div>
                             <img className="card-img-top" src={nonprofit.image} />
                             <hr/>
                             <div className="card-body">
-                                <p className="card-text">{nonprofit.description}</p>
-                                <p className="card-text">Contact: {nonprofit.contact_info}</p>
+                                <p className="card-text">Bio: {nonprofit.description}</p>
                             </div>
                             <div className="card-footer">
                                 <small className="text-muted">{nonprofit.link}</small>

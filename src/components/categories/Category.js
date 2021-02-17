@@ -1,23 +1,24 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import CategoryShow from './CategoryShow'
-import {Link} from 'react-router-dom'
 
 class Category extends Component {
 
     render(){
         
         const category = this.props.categories.find(c => `${c.id}` === this.props.match.params.category_id)
-        const npList = category.nonprofits.map(np => <CategoryShow key={np.id} nonprofit={np}/>)
+        console.log(category)
+
+        const nonprofitList = category.nonprofits.map(np => <CategoryShow key={np.id} nonprofit={np}/>)
             
         return(
             <div>
                 <div className="container">
                    <h2>{category.name}</h2> 
-                </div>   
+                </div>  
                 <hr/>
                 <ul>
-                    {npList}
+                    {nonprofitList}
                 </ul>
             </div>
         )

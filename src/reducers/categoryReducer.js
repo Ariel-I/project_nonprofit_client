@@ -61,7 +61,7 @@ const categoryReducer = (state= {
                 ...state,
                 nonprofits: action.payload,
                 loading: false
-            }  
+            } 
 
         default:
             return state;    

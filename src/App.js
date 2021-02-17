@@ -8,8 +8,17 @@ import Home from './components/Home';
 import Category from './components/categories/Category'
 import Nonprofit from './components/nonprofits/Nonprofit'
 import CategoryContainer from './containers/CategoryContainer'
+import { connect } from 'react-redux';
+import {getCategories} from './actions/categories'
+import {getNonprofits} from './actions/nonprofits'
 
 class App extends Component {
+
+  componentDidMount(){
+    this.props.getCategories();
+    this.props.getNonprofits();
+  } 
+
 
   render(){
 
@@ -29,5 +38,12 @@ class App extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    categories: state.categoryReducer.categories,
+    nonprofits: state.nonprofitReducer.nonprofits
+  }
+}
  
-export default App;
+export default connect(mapStateToProps, {getCategories, getNonprofits})(App)

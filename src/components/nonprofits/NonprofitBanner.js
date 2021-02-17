@@ -8,7 +8,7 @@ const NonprofitBanner = (props) => {
             <Container>
                 <h1>{props.nonprofit.name}</h1>
                 <p>
-                 Headquaters: {props.nonprofit.location}
+                Contact info: {props.nonprofit.contact_info}
                 </p>
             </Container>
         </Jumbotron>
