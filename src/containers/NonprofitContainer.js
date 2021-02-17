@@ -21,7 +21,6 @@ class NonProfitContainer extends Component {
         this.setState({ nonprofits: sortedDesc })
     }
 
-
     render(){
     
         return(
